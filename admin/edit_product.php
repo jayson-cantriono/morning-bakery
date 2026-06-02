@@ -1,4 +1,5 @@
 <?php
+include 'image_helper.php';
 include 'admin_auth.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -30,14 +31,15 @@ if (isset($_POST['update'])) {
 
     $image = $product['image'];
 
-    if (!empty($_FILES['image']['name'])) {
-        $image = time() . "_" . basename($_FILES['image']['name']);
-        $tmp = $_FILES['image']['tmp_name'];
+    $image = $product['image'];
 
-        move_uploaded_file(
-            $tmp,
-            "../assets/products/" . $image
-        );
+if (!empty($_FILES['image']['name'])) {
+
+    $image = uploadProductImage(
+        $_FILES['image'],
+        $product['image']
+    );
+
     }
 
     $stmt = mysqli_prepare(

@@ -1,4 +1,5 @@
 <?php
+include 'image_helper.php';
 include 'admin_auth.php';
 
 if (isset($_POST['save'])) {
@@ -12,14 +13,10 @@ if (isset($_POST['save'])) {
 
     $image = 'placeholder.jpg';
 
-    if (!empty($_FILES['image']['name'])) {
-        $image = time() . '_' . basename($_FILES['image']['name']);
-
-        move_uploaded_file(
-            $_FILES['image']['tmp_name'],
-            '../assets/products/' . $image
-        );
-    }
+    $image = uploadProductImage(
+    $_FILES['image'],
+    'placeholder.jpg'
+);
 
     $stmt = mysqli_prepare(
         $conn,

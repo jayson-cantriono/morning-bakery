@@ -169,7 +169,7 @@ $products = mysqli_stmt_get_result($stmt);
 
             <?php while ($product = mysqli_fetch_assoc($products)): ?>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6">
 
                     <div class="product-card h-100 d-flex flex-column">
 
@@ -187,7 +187,7 @@ $products = mysqli_stmt_get_result($stmt);
                             >
                         </div>
 
-                        <div class="product-body d-flex flex-column flex-grow-1">
+                       <div class="product-body d-flex flex-column flex-grow-1 text-center">
 
                             <h5 class="fw-bold">
                                 <?= e($product['product_name']); ?>

@@ -344,36 +344,26 @@ $bestSellers = mysqli_query(
 
         <div class="row g-4">
 
-            <?php while ($category = mysqli_fetch_assoc($categories)): ?>
+    <?php while ($category = mysqli_fetch_assoc($categories)): ?>
 
-                <div class="col-6 col-md-3">
+        <div class="col-6 col-md-3">
 
-                    <a 
-                        href="category.php?id=<?= $category['id']; ?>"
-                        class="text-decoration-none text-dark"
-                    >
+            <a 
+                href="category.php?id=<?= $category['id']; ?>"
+                class="text-decoration-none"
+            >
 
-                        <div class="category-card">
-
-                            <div class="category-icon">
-                                🥐
-                            </div>
-
-                            <h6 class="mt-3 fw-bold">
-                                <?= e($category['category_name']); ?>
-                            </h6>
-
-                        </div>
-
-                    </a>
-
+                <div class="category-card category-premium">
+                    <?= e($category['category_name']); ?>
                 </div>
 
-            <?php endwhile; ?>
+            </a>
 
         </div>
 
-    </div>
+    <?php endwhile; ?>
+
+</div>
 
 </section>
 
