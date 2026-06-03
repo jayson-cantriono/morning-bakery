@@ -226,15 +226,6 @@ $can_checkout = true;
                     Total: <?= rupiah($total); ?>
                 </h4>
 
-                <div>
-                    <button 
-                        type="submit"
-                        name="update"
-                        class="btn btn-outline-maroon"
-                    >
-                        Update
-                    </button>
-
                     <?php if ($can_checkout && $total > 0): ?>
 
                         <a 
