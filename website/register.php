@@ -123,7 +123,7 @@ if (isset($_POST['register'])) {
         </form>
 
         <p class="mt-3 mb-0">
-            Sudah punya akun?
+             Already Have an Account?
             <a href="login.php">
                 Login
             </a>
